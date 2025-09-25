@@ -1,0 +1,648 @@
+
+/* ESTILO PARA CELULAR */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Distant Galaxy";
+  src: url("../fonts/SF\ Distant\ Galaxy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: "Distant Galaxy", sans-serif;
+    font-weight: normal;
+}
+
+h2{
+    font-family: "Distant Galaxy", sans-serif;
+    font-weight: normal;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #fff;
+    background-color: #000000;
+}
+
+header {
+  position: relative;
+  padding: 30% 5%;
+  box-shadow: 0 0 7px 1px #ffffff;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+header h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(30px, 5vw, 80px);
+  padding: 5%;
+  text-align: center;
+  color: #fff;
+  background-color: #0000009d;
+  border-radius: 15px;
+  box-shadow: 0 0 7px 1px #ff0000, 0 0 7px 1px #640101;
+  animation: glow 2s infinite alternate;
+  margin: 0;
+}
+
+.banner h1 {
+  top: 50%;
+  transform: translateY(-50%);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 7px 1px #ff0000, 0 0 7px 1px #640101;
+  }
+  to {
+    box-shadow: 0 0 15px 3px #ff0000, 0 0 20px 5px #640101;
+  }
+}
+
+/*                                                      */
+
+/*       ----------------------------------------------------------------------------------------       */
+
+.scenes {
+  position: relative;
+  aspect-ratio: 2.4 / 1;
+  outline: 2px solid #ccc;
+}
+
+.scene-1, .scene-2 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+}
+
+/* Primer banner */
+.banner-1 .scene-1 {
+  background-image: url('../imagenes/prop_1_1.jpg');
+}
+
+.banner-1 .scene-2 {
+  background-image: url('../imagenes/prop_2_1.jpg');
+  -webkit-mask-image: linear-gradient(to right, transparent 47.5%, #fff 52.5%);
+  -webkit-mask-size: 210%;
+  -webkit-mask-position: left;
+  transition: -webkit-mask-position 2s linear;
+}
+
+
+#animar1:checked ~ .scenes .scene-2 {
+  -webkit-mask-position: right;
+}
+
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: #5c0101;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+  padding: 30px 60px;
+  font-size: 1.25rem;
+  border-radius: 8px;
+}
+.btn:hover {
+  background: #555;
+}
+
+
+
+
+
+/* Segundo banner */
+.banner-2 .scene-1 {
+  background-image: url('../imagenes/prop_1_2.jpg');
+}
+
+.banner-2 .scene-2 {
+  background-image: url('../imagenes/prop_2_2.jpg');
+  -webkit-mask-image: linear-gradient(to right, transparent 47.5%, #fff 52.5%);
+  -webkit-mask-size: 210%;
+  -webkit-mask-position: left;
+  transition: -webkit-mask-position 2s linear;
+}
+
+#animar2:checked ~ .scenes .scene-2{
+  -webkit-mask-position: right;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background: #5c0101;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: sans-serif;
+  user-select: none;
+  padding: 30px 60px;
+  font-size: 2rem;
+  border-radius: 8px;
+}
+.btn:hover {
+  background: #555;
+}
+/* Scene titles */
+.scene-title {
+  position: absolute;
+  max-width: 45%;
+  margin: min(40px, 4vw);
+  font-size: 1.25em;
+}
+
+.scene-1 .scene-title {
+  top: 0;
+  left: 0;
+  color: #000;
+  text-align: left;
+}
+
+.scene-2 .scene-title {
+  top: 0;
+  right: 0;
+  color: #fff;
+  text-align: right;
+}
+
+
+
+
+/*       ----------------------------------------------------------------------------------------       */
+
+
+
+
+
+/*         ---------------------Personjes pastillas---------------------             */
+
+#buscados{
+  padding: 8% 2%;
+  background-image: url('../imagenes/fondo_buscados.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#buscados h2{
+  color: #fff;
+  padding-bottom: 5%;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(158, 0, 0);
+}
+
+.personajes .slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vh 5%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.personajes .slider img {
+  flex: 1 1 45%;
+  max-width: 45%;
+  height: auto;
+  box-shadow: 0 0 7px 1px #ff0000, 0 0 7px 1px #640101;
+}
+
+
+/*         ---------------------Texto noticia---------------------             */
+
+
+#boletin{
+    padding-top: 6%;
+    padding-bottom: 8%;
+    background-image: url('../imagenes/fondo_hud.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+}
+
+#boletin h2{
+    padding: clamp(15px, 4vw, 25px) 0;
+    font-size: clamp(24px, 5vw, 50px);
+    color: #fff;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 5vh auto;
+
+    box-shadow: 0 0 7px 1px #ff0000, 0 0 7px 1px #640101;
+    animation: glow 2s infinite alternate;
+}
+
+#estrella {
+    float: none;
+    display: block;
+    width: 90%;
+    max-width: 45%;
+    height: auto;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.textos {
+  background-color: #0000006c;
+  padding: 0 calc(15px + 2vw);  
+}
+
+.textos p {
+  padding-top: calc(10px + 2vh); 
+}
+#fin-parrafo {
+  text-align: center;
+  font-size: calc(20px + 2vw); 
+}
+
+/*     Animacion cursor      */
+
+.cursor {
+    display: inline-block;
+    width: 15px;               
+    height: 1.2em;            
+    background-color: #fff;
+    margin-left: 3px;         
+    animation: blink 2s infinite;
+    vertical-align: middle;   
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+
+/*   VER MÁS    */
+
+.vermas-check {
+  display: none;
+}
+
+.mas {
+  display: none;
+}
+
+.vermas-check:checked ~ .mas {
+  display: block;
+}
+
+.btn-vermas {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+  color: rgb(255, 38, 38);
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.texto-menos {
+  display: none;
+}
+
+.vermas-check:checked ~ .btn-vermas .texto-ver {
+  display: none;
+}
+
+.vermas-check:checked ~ .btn-vermas .texto-menos {
+  display: inline;
+}
+
+/*         ---------------------Reseñas---------------------             */
+
+/* .contenedor_reseñas{
+  padding: calc(10px + 1vh) calc(20px + 5vw);
+  background-image: url('../imagenes/estrellas_2.jpg');
+  
+  align-items: center;
+  text-align: center;
+} */
+.contenedor_reseñas {
+  display: flex;                 
+  flex-direction: column;        
+  align-items: center;           
+  justify-content: center;       
+  
+  padding: calc(10px + 1vh) calc(20px + 5vw);
+  background-image: url('../imagenes/estrellas_2.jpg');
+  text-align: center;
+}
+#reseñas h2{
+  padding-top: 10%;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgb(158, 0, 0);
+}
+
+.reseñas {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: calc(10px + 1vw);
+  padding-bottom: calc(30px + 5vh);
+
+  background-image: url('../imagenes/marco\ reseña.png');
+  background-size: 100% auto;  
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+}
+.reseñas h3 {
+  font-size: calc(25px + 2vw);
+  margin-bottom: calc(10px + 1vh);
+  color: rgb(255, 255, 255);
+}
+.reseñas p {
+  font-size: calc(15px + 2vw);
+  line-height: 1.5;
+}
+.reseñas img {
+  max-width: 80%;
+  margin-bottom: calc(5px + 1vh);
+}
+
+
+/*         ---------------------Footer---------------------             */
+
+footer{
+  padding: 5% 5% 5% 5%;
+  height: auto;
+  box-shadow: 0 0 1px 1px #ffffff, 0 0 3px 1px #640101;
+  background-image: url('../imagenes/fondo_footer.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.fondo_footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+}
+
+.estrellas_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.redes li {
+  display: flex;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: calc(10px + 3vw);
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: auto;
+}
+
+.add{
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.add h3{
+  padding-top: 5%;
+  font-size: calc(15px + 2vw);
+  text-align: center;
+}
+
+.sponsor_img{
+  width: calc(400px + 7vw);
+  height: calc(400px + 7vw);
+  height: auto;
+}
+
+.fa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50px + 4vw);
+  height: calc(50px + 4vw);
+  border-radius: 10%;
+  transition: transform 0.2s;
+  box-shadow: 0 0 3px 1px #ffffff, 0 0 3px 1px #640101;
+}
+
+.fa:hover {
+  box-shadow: 0 0 3px 1px #ff5353, 0 0 3px 1px #640101;
+}
+
+.fa-facebook {
+  background-image: url('../imagenes/icono_facebook.jpg');
+  background-size: cover;
+  background-position: center;
+
+}
+
+.fa-twitter {
+  background-image: url('../imagenes/icono_twitter.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.fa-instagram {
+  background-image: url('../imagenes/icono_instagram.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.fa:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.info_alumno{
+  padding-top: calc(25px + 2vw);
+  text-align: center;
+  font-size: calc(10px + 1vw);
+}
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+/*Breakpoint para tablets*/
+
+@media screen and (min-width: 577px) and (max-width: 991px) {
+
+
+
+}
+
+/* Media query para desktop */
+
+@media screen and (min-width: 992px) {
+
+  body {
+    margin-left: calc(500px + 5vw);
+    margin-right: calc(500px + 5vw);
+    
+  }
+
+ header {
+    padding: 25% 5%;
+    max-height: 600px;
+  }
+
+  header h1 {
+    font-size: clamp(50px, 4vw, 120px);
+    padding: 2%;
+  }
+
+  #buscados{
+    padding: 5%;
+    background-image: url('../imagenes/fondo_buscados_2.jpg');
+  }
+
+  #buscados h2{
+    padding-bottom: 5%;
+    font-size: clamp(50px, 4vw, 120px);
+  }
+
+  .personajes .slider {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin-bottom: 2vh;
+  }
+
+  .btn {
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 30px 60px;
+    font-size: clamp(50px, 2vw, 120px);
+    border-radius: clamp(20px, 1vw, 30px);
+  }
+
+  #boletin h2{
+    font-size: clamp(100px, 3vw, 120px);
+  }
+
+  #estrella {
+    float: right;
+    width: 45%;
+    max-width: 45%;
+    margin: 0 0 20px 20px;
+  }
+
+  .btn-vermas{
+    display: none;
+  }
+  .mas {
+    display: inline;
+  }
+
+  .textos{
+      column-count: 2;
+      column-gap: 30px;
+  }
+
+  .textos p{
+    font-size: clamp(20px, 2vw, 100px);
+  }
+
+  .contenedor_reseñas {
+    flex-direction: row;    
+    justify-content: space-around;
+    flex-wrap: wrap;        
+    padding: calc(30px + 2vh) calc(50px + 5vw);
+    background-image: url('../imagenes/estrellas_2_pc.jpg');
+  }
+
+  #reseñas h2{
+    font-size: clamp(100px, 3vw, 120px);
+  }
+
+  .reseñas {
+    width: 30%;             
+    max-width: 30%;
+    padding: calc(40px + 2vw);
+    padding-bottom: calc(60px + 5vh);
+    background-image: none;
+    background-size: 100% auto; 
+  }
+
+  .reseñas h3 {
+    font-size: calc(35px + 1vw);
+    margin-bottom: calc(15px + 2vh);
+  }
+
+  .reseñas p {
+    font-size: calc(18px + 1vw);
+  }
+
+  .reseñas img {
+    width: 40%;
+    max-width: 80%;
+    margin-bottom: calc(10px + 2vh);
+  }
+
+
+
+
+}
+
+
+
+
+
